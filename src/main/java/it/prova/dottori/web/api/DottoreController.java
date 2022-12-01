@@ -66,6 +66,11 @@ public class DottoreController {
 	@DeleteMapping("/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void delete(@PathVariable(required = true) Long id) {
+		Dottore dottoreDaEliminare = dottoreService.caricaSingoloElemento(id);
+		
+		if(dottoreDaEliminare == null)
+			throw new DottoreNotFoundException("nessun dottore trovato");
+		
 		dottoreService.rimuovi(id);
 	}
 }
