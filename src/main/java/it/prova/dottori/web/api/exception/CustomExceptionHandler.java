@@ -36,7 +36,7 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler{
 	}
 	
 	@ExceptionHandler(DottoreNotFoundException.class)
-	public ResponseEntity<Object> handleFilmNotFoundException(DottoreNotFoundException ex, WebRequest request) {
+	public ResponseEntity<Object> handleDottoreNotFoundException(DottoreNotFoundException ex, WebRequest request) {
 
 		Map<String, Object> body = new LinkedHashMap<>();
 		body.put("timestamp", LocalDateTime.now());
