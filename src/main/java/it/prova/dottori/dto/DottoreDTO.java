@@ -29,6 +29,8 @@ public class DottoreDTO {
 				.cognome(cognome)
 				.codiceDottore(codiceDottore)
 				.codFiscalePazienteAttualmenteInVisita(codFiscalePazienteAttualmenteInVisita)
+				.inServizio(inServizio)
+				.inVisita(inVisita)
 				.build();
 		return result;
 	}
@@ -40,8 +42,9 @@ public class DottoreDTO {
 				.cognome(dottoreModel.getCognome())
 				.codiceDottore(dottoreModel.getCodiceDottore())
 				.codFiscalePazienteAttualmenteInVisita(dottoreModel.getCodFiscalePazienteAttualmenteInVisita())
+				.inServizio(dottoreModel.isInServizio())
+				.inVisita(dottoreModel.isInVisita())
 				.build();
-		
 		return result;
 	}
 	
