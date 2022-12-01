@@ -16,4 +16,6 @@ public interface DottoreService {
 	public void inserisciNuovo(Dottore dottoreInstance);
 	
 	public void rimuovi(Long idToRemove);
+	
+	public Dottore cercaPerCodiceFiscale(String codiceFiscale);
 }

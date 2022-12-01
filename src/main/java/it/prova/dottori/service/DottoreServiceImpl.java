@@ -36,12 +36,19 @@ public class DottoreServiceImpl implements DottoreService{
 
 	@Override
 	public void inserisciNuovo(Dottore dottoreInstance) {
+		dottoreInstance.setInServizio(true);
+		dottoreInstance.setInVisita(false);
 		dottoreRepository.save(dottoreInstance);
 	}
 
 	@Override
 	public void rimuovi(Long idToRemove) {
 		dottoreRepository.deleteById(idToRemove);
+	}
+
+	@Override
+	public Dottore cercaPerCodiceFiscale(String codiceFiscale) {
+		return dottoreRepository.findByCodFiscale(codiceFiscale);
 	}
 
 }
