@@ -8,5 +8,9 @@ import it.prova.dottori.model.Dottore;
 public interface DottoreRepository extends CrudRepository<Dottore, Long>{
 	
 	@Query("from Dottore d where d.codFiscalePazienteAttualmenteInVisita = :codiceFiscale")
-	Dottore findByCodFiscale(String codiceFiscale);
+	Dottore findByCodFiscale(String codiceFiscale); 
+	
+	@Query("from Dottore d where d.codiceDottore = :codiceDottore")
+	Dottore verifyDisponibilita(String codiceDottore);
+	
 }
