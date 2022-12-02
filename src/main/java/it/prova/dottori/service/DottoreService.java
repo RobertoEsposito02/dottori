@@ -23,4 +23,6 @@ public interface DottoreService {
 	
 	public Dottore impostaDottore(Dottore dottore);
 	
+	public Dottore ricovera(Dottore dottore);
+	
 }

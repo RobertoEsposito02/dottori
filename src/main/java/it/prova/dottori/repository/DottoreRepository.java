@@ -11,6 +11,6 @@ public interface DottoreRepository extends CrudRepository<Dottore, Long>{
 	Dottore findByCodFiscale(String codiceFiscale); 
 	
 	@Query("from Dottore d where d.codiceDottore = :codiceDottore")
-	Dottore verifyDisponibilita(String codiceDottore);
+	Dottore caricaDottoreFromCodiceDottore(String codiceDottore);
 	
 }

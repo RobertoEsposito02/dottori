@@ -98,4 +98,13 @@ public class DottoreController {
 		
 		return DottorePazienteDTO.buildDottoreDTOFromModel(dottoreService.impostaDottore(dottore));
 	}
+	
+	@PostMapping("/ricovera")
+	public DottorePazienteDTO ricovera(@RequestBody DottorePazienteDTO dottorePazienteDTO) {
+		Dottore dottore = Dottore.builder().codiceDottore(dottorePazienteDTO.getCodiceDottore())
+				.codFiscalePazienteAttualmenteInVisita(dottorePazienteDTO.getCodFiscalePazienteAttualmenteInVisita())
+				.build();
+		
+		return DottorePazienteDTO.buildDottoreDTOFromModel(dottoreService.ricovera(dottore));
+	}
 }
